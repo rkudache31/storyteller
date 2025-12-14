@@ -1,48 +1,33 @@
 const logMsg = document.getElementById("log-msg");
-// alert("LOGGED IN")
-function login(event) {
 
+function login(event) {
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
-    if (email == "" || password == "") {
+    if (email === "" || password === "") {
         showMessage("Please enter email and password!", false);
     } else if (email === "demo@kid.com" && password === "1234") {
-        showMessage("Login successful! Redirecting...", true);
-        setTimeout(function () {
-            window.location.href = "dashboard.html";
-        }, 1500);
+        showMessage("Login successful! Redirecting to stories... 🎉", true);
+        setTimeout(() => {
+            window.location.href = "http://172.203.138.104";
+        }, 2000);
     } else {
-        showMessage("Oops! Invalid credentials ", false);
+        showMessage("Oops! Wrong email or password", false);
     }
 }
 
-
-// //Just to check
-// function login() {
-//     alert("Login clicked");
-// }
-// // Just to check
-
-
 function loginGoogle() {
-    showMessage("Google login successful! Redirecting...", true);
-    setTimeout(function () {
-        window.location.href = "dashboard.html";
-    }, 1500);
+    showMessage("Google login demo! Redirecting... 🎈", true);
+    setTimeout(() => {
+        window.location.href = "http://172.203.138.104";
+    }, 2000);
 }
 
 function showMessage(message, success) {
     logMsg.style.display = "block";
     logMsg.textContent = message;
-
-    if (success) {
-        logMsg.classList.remove("login-error");
-        logMsg.classList.add("login-success");
-    } else {
-        logMsg.classList.remove("login-success");
-        logMsg.classList.add("login-error");
-    }
+    logMsg.classList.remove("login-success", "login-error");
+    logMsg.classList.add(success ? "login-success" : "login-error");
 }
