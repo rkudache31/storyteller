@@ -1,0 +1,711 @@
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Poppins", sans-serif;
+}
+
+
+
+@media (max-width: 768px) {
+    .side-img {
+        display: none;
+    }
+}
+
+body {
+    background: linear-gradient(to bottom, #0A001F, #120458, #4B0082);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Apple Color Emoji",
+        "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    ;
+    position: relative;
+    margin: 0;
+    height: 122vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: url("night-img.jpg") no-repeat center / fill; */
+    color: var(--text-light);
+}
+
+
+
+.page {
+    position: relative;
+    width: 900px;
+    height: 590px;
+    top: -60px;
+}
+
+/* 🧸 BEAR — TOUCHING THE CARD */
+.bear {
+    position: absolute;
+    left: -90px;
+    /* 👈 brings bear closer */
+    bottom: -15px;
+    width: 420px;
+    z-index: 3;
+    /* bear comes above card edge */
+    pointer-events: none;
+}
+
+.bear {
+    transform: translateX(15px);
+}
+
+/* 👧 MASHA IMAGE */
+.masha {
+    position: absolute;
+    top: -85px;
+    /* sits on card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* LOGIN CARD */
+.login-container {
+    position: absolute;
+    left: 220px;
+    /* 👈 card moves towards bear */
+    top: 20px;
+    width: 460px;
+    background: #d7bde2;
+    border: 2px solid rgba(0, 255, 180, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 180, 0.7);
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+
+
+.login-container {
+    animation: pop 0.7s ease;
+}
+
+.st {
+    color: #000000de;
+    ;
+    margin-bottom: 8px;
+    font-family: "Fleur De Leah", cursive;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.wl {
+    color: rgb(130, 2, 130);
+    margin-bottom: 10px;
+    font-family: "Princess Sofia", cursive;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+.subtitle {
+    color: #031e96;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    margin: 8px 0 5px;
+    color: #323131;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #d8d8d8;
+    outline: none;
+    font-size: 11px;
+    box-shadow: 0 0 3px 2px cyan;
+}
+
+input:focus {
+    border-color: rgb(0, 225, 255);
+    box-shadow: 0 0 5px 3px cyan;
+}
+
+.login-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 5px cyan;
+    /* background-color: #66a6ff; */
+    background: linear-gradient(to right, #1105ee, #0ef1a987);
+
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+
+button:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 10px cyan, 0 0 10px cyan,
+        0 0 10px rgb(0, 0, 0), 0 0 10px cyan;
+}
+
+.login-btn:hover {
+    background-color: #4f8cff;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.divider {
+    margin: 10px 0;
+    font-size: 11px;
+    color: #d71313;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 5px cyan;
+    border: none;
+    background: linear-gradient(to right, #1105ee, #0ef1a987);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.google-btn:hover {
+    background-color: #4f8cff;
+    transform: translateY(-3px) scale(1.05);
+    transform: scale(1.05);
+}
+
+
+.google-custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    /* Space between icon and text */
+    margin-top: 10px;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-text {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #ed1ed1d6;
+}
+
+.footer-text span {
+    color: #430bbb;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+
+}
+
+a {
+    color: #c4f9e887;
+    text-decoration: none;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 3px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0048cf;
+    /* text-decoration: cyan underline; */
+
+}
+
+
+#log-msg {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Login Success */
+.login-success {
+    background-color: #d4edda;
+    color: #07e53b;
+    font-size: bold;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 0 25px #d595fa, 0 0 50px rgba(224, 170, 255, 0.7);
+}
+
+/* Error msg */
+.login-error {
+    /* background: linear-gradient(to right, #1105ee, #0ef1a987); */
+    background-color: #f8d7da;
+    color: #6b010b;
+    font-size: bold;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 0 25px #cc83f6, 0 0 50px rgba(224, 170, 255, 0.7);
+
+}
+
+/* -------------------------------------------
+   FLOATING SOAP BUBBLES (MAGICAL + LIGHT)
+------------------------------------------- */
+
+.bubbles {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* bubbles won't block clicks */
+    overflow: hidden;
+    z-index: 4;
+}
+
+/* Create 20 bubbles */
+.bubbles::before,
+.bubbles::after {
+    content: "";
+}
+
+.bubbles span {
+    position: absolute;
+    bottom: -120px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+    animation: bubbleRise linear infinite;
+}
+
+/* Random bubble sizes */
+.bubbles span:nth-child(odd) {
+    width: 14px;
+    height: 14px;
+}
+
+.bubbles span:nth-child(3n) {
+    width: 26px;
+    height: 26px;
+}
+
+.bubbles span:nth-child(5n) {
+    width: 32px;
+    height: 32px;
+}
+
+/* Random positions + delays + speeds */
+.bubbles span:nth-child(1) {
+    left: 5%;
+    animation-duration: 9s;
+    animation-delay: 0s;
+}
+
+.bubbles span:nth-child(2) {
+    left: 15%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubbles span:nth-child(3) {
+    left: 25%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.bubbles span:nth-child(4) {
+    left: 35%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubbles span:nth-child(5) {
+    left: 45%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.bubbles span:nth-child(6) {
+    left: 55%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.bubbles span:nth-child(7) {
+    left: 65%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.bubbles span:nth-child(8) {
+    left: 75%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubbles span:nth-child(9) {
+    left: 85%;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+.bubbles span:nth-child(10) {
+    left: 95%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+/* Duplicate for more bubbles */
+.bubbles span:nth-child(11) {
+    left: 12%;
+    animation-duration: 13s;
+    animation-delay: 2s;
+}
+
+.bubbles span:nth-child(12) {
+    left: 28%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.bubbles span:nth-child(13) {
+    left: 42%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.bubbles span:nth-child(14) {
+    left: 58%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.bubbles span:nth-child(15) {
+    left: 72%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.bubbles span:nth-child(16) {
+    left: 88%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.bubbles span:nth-child(17) {
+    left: 33%;
+    animation-duration: 7s;
+    animation-delay: 1s;
+}
+
+.bubbles span:nth-child(18) {
+    left: 67%;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.bubbles span:nth-child(19) {
+    left: 49%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.bubbles span:nth-child(20) {
+    left: 81%;
+    animation-duration: 13s;
+    animation-delay: 1s;
+}
+
+/* Bubble rising animation */
+@keyframes bubbleRise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-50vh) scale(1.2);
+    }
+
+    100% {
+        transform: translateY(-120vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE MEDIA QUERIES – Login Page (Masha & Bear Theme)
+   Ensures magical consistency & perfect layout on all screens
+---------------------------------------------------- */
+
+/* Base improvements – apply outside media queries */
+body {
+    min-height: 100vh;
+    /* Replace fixed height */
+    padding: 20px;
+    /* Safe padding on small screens */
+}
+
+.page {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    /* Allow natural height */
+    min-height: 590px;
+    margin: 0 auto;
+    top: 0;
+}
+
+/* Fluid typography for titles */
+.st {
+    font-size: clamp(50px, 10vw, 90px);
+}
+
+.wl {
+    font-size: clamp(20px, 5vw, 28px);
+}
+
+.subtitle {
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+label {
+    font-size: clamp(15px, 2.5vw, 17px);
+}
+
+input,
+.login-btn,
+.google-btn {
+    font-size: clamp(13px, 2vw, 16px);
+}
+
+.footer-text {
+    font-size: clamp(12px, 2vw, 13px);
+}
+
+/* Large Desktops (≥1200px) – Original design */
+@media (min-width: 1200px) {
+    .page {
+        top: -60px;
+    }
+
+    .bear {
+        left: -90px;
+        bottom: -15px;
+        width: 420px;
+    }
+
+    .login-container {
+        left: 220px;
+        top: 20px;
+        width: 460px;
+        padding: 45px 35px;
+    }
+
+    .masha {
+        top: -85px;
+        width: 140px;
+    }
+}
+
+/* Desktops & Large Tablets (≤1199px) */
+@media (max-width: 1199px) {
+    .bear {
+        left: -10%;
+        width: 45%;
+        bottom: -5%;
+    }
+
+    .login-container {
+        left: 18%;
+        width: 55%;
+        padding: 40px 30px;
+    }
+
+    .masha {
+        top: -12%;
+        width: 18%;
+        max-width: 140px;
+    }
+}
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+    .bear {
+        left: -5%;
+        width: 48%;
+    }
+
+    .login-container {
+        left: 15%;
+        width: 60%;
+        padding: 35px 25px;
+    }
+
+    .masha {
+        top: -10%;
+        width: 20%;
+    }
+}
+
+/* Small Tablets & Landscape Phones (≤768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .page {
+        padding: 20px 10px;
+    }
+
+    /* Hide bear to prevent overlap */
+    .bear {
+        display: none;
+    }
+
+    .login-container {
+        position: static;
+        width: 90%;
+        max-width: 420px;
+        margin: 60px auto 40px;
+        padding: 35px 25px;
+        transform: none;
+    }
+
+    .masha {
+        top: -70px;
+        width: 130px;
+    }
+
+    .st {
+        font-size: clamp(45px, 12vw, 70px);
+    }
+}
+
+/* Mobile Portrait (≤600px) */
+@media (max-width: 600px) {
+    .login-container {
+        width: 95%;
+        padding: 30px 20px;
+        margin-top: 50px;
+    }
+
+    .masha {
+        top: -60px;
+        width: 120px;
+    }
+
+    .google-btn,
+    .login-btn {
+        padding: 14px;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    .login-container {
+        width: 98%;
+        padding: 25px 18px;
+        border-radius: 18px;
+    }
+
+    .masha {
+        top: -50px;
+        width: 100px;
+    }
+
+    .st {
+        font-size: clamp(40px, 12vw, 60px);
+    }
+
+    .wl {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    input {
+        padding: 11px;
+    }
+
+    .login-btn,
+    .google-btn {
+        padding: 12px;
+    }
+}
+
+/* Very Small Mobile (≤360px) */
+@media (max-width: 360px) {
+    .masha {
+        width: 90px;
+        top: -45px;
+    }
+
+    .login-container {
+        padding: 20px 15px;
+    }
+
+    .st {
+        font-size: 48px;
+    }
+}
