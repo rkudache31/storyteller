@@ -1,0 +1,271 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: #e3effb;
+  overflow-x: hidden;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.cover-letter-container {
+  width: 100vw;
+  padding: 40px 60px;
+  background: linear-gradient(
+    180deg,
+    #7babde 0%,
+    #ffffff 22%,
+    #ffffff 78%,
+    #7babde 100%
+  );
+}
+
+/* ================= HEADER ================= */
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #0f2027;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #1a73e8;
+  margin-bottom: 12px;
+}
+
+.contact-bar {
+  font-size: 14px;
+}
+
+/* ================= CONTENT ================= */
+.divider {
+  margin: 15px 0;
+  height: 1px;
+  border: none;
+  background: linear-gradient(to right, transparent, #d0e2f5, transparent);
+}
+
+.letter-body p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.value-list {
+  margin: 20px 0 25px 20px;
+}
+
+.value-list li {
+  margin-bottom: 10px;
+}
+
+.letter-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e6eef7;
+}
+
+.signature {
+  font-weight: bold;
+}
+
+/* ===== CTA INLINE SECTION ===== */
+.cta-inline {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;         /* space between text and button section */
+  flex-wrap: wrap;   /* mobile safety */
+}
+
+/* Text */
+.bot-line {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Button + Robot wrapper */
+.btn-robot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inline-chat-btn {
+  position: relative;
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* OUTER SHINE BORDER */
+.inline-chat-btn::before {
+  content: "";
+  position: absolute;
+  inset: -3px;  
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #00f0ff,
+    #0078ff,
+    #00f0ff,
+    #0078ff
+  );
+  background-size: 400% 400%;
+  animation: borderShine 3s linear infinite;
+  z-index: -2;
+}
+
+/* INNER WHITE LAYER */
+.inline-chat-btn::after {
+  content: "";
+  position: absolute;
+  inset: 3px;   /* 🔥 Adjust inner spacing */
+  border-radius: 999px;
+  background: #fff;
+  z-index: -1;
+}
+
+/* Animation */
+@keyframes borderShine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Robot */
+.robot-small {
+  width: 150px;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* ================= CHAT WRAPPER ================= */
+#chatWrapper {
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+#chatFrame {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= DOWNLOAD ICON ================= */
+.download-icon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.download-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .cover-letter-container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .profile-img {
+    display: block;
+    margin: 0 auto 15px;
+  }
+
+  .contact-bar {
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .cta-inline {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-robot-wrap {
+    flex-direction: column;
+  }
+
+  .inline-chat-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .robot-small {
+    width: 100px;
+    margin-top: 10px;
+  }
+
+  #chatFrame {
+    height: 80vh; /* more natural mobile height */
+    border-radius: 8px;
+  }
+
+  .download-icon-wrapper {
+    top: 10px;
+    right: 15px;
+  }
+}
+/* ================= PRINT ================= */
+@media print {
+  .cta-row,
+  #chatWrapper,
+  .download-icon-wrapper {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+}
